@@ -3,3 +3,6 @@
 # User specific
 .DS_Store
 .idea/
+*/obj/
+*/bin/
+
