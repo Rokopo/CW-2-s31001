@@ -1,6 +1,6 @@
 namespace cwiczenia_2;
 
-class RefrigeratedContainer : Container
+public class RefrigeratedContainer : Container
 {
     public string ProductType { get; }
     public double Temperature { get; }

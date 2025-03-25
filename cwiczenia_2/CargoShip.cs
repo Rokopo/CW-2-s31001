@@ -1,6 +1,6 @@
 namespace cwiczenia_2;
 
-class CargoShip
+public class CargoShip
 {
     public List<Container> Containers { get; } = new List<Container>();
     public double MaxWeight { get; }
@@ -26,6 +26,11 @@ class CargoShip
     public void UnloadContainer(Container container)
     {
         Containers.Remove(container);
+    }
+
+    public Container FindContainerBySerial(string serialNumber)
+    {
+        return Containers.Find(c => c.SerialNumber == serialNumber);
     }
 
     public double GetTotalWeight()

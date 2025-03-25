@@ -1,6 +1,6 @@
 namespace cwiczenia_2;
 
-class GasContainer : Container, IHazardNotifier
+public class GasContainer : Container, IHazardNotifier
 {
     public double Pressure { get; }
 

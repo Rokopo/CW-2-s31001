@@ -1,6 +1,6 @@
 namespace cwiczenia_2;
 
-abstract class Container
+public abstract class Container
 {
     private static int counter = 1;
     public string SerialNumber { get; }
@@ -32,4 +32,4 @@ abstract class Container
     }
 
     public override string ToString() => $"[{SerialNumber}] Masa ładunku: {LoadMass}/{MaxLoadCapacity} kg";
-}    
+}

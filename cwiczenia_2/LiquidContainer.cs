@@ -1,6 +1,6 @@
 namespace cwiczenia_2;
 
-class LiquidContainer : Container, IHazardNotifier
+public class LiquidContainer : Container, IHazardNotifier
 {
     private bool isHazardous;
     public LiquidContainer(double maxLoad, double ownWeight, double height, double depth, bool hazardous)

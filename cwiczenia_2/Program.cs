@@ -4,23 +4,39 @@ class Program
 {
     static void Main()
     {
-        CargoShip ship = new CargoShip(500, 10, 20);
-        RefrigeratedContainer appleContainer = new RefrigeratedContainer(1000, 500, 250, 600, "Banany", 5);
-        GasContainer oilContainer = new GasContainer(2000, 700, 300, 700, 10);
-        LiquidContainer orangeContainer = new LiquidContainer(1500, 600, 280, 650, false);
-        
-        appleContainer.Load(777);
-        oilContainer.Load(1337);
-        orangeContainer.Load(1200);
+        CargoShip ship1 = new CargoShip(500, 10, 20);
+        CargoShip ship2 = new CargoShip(700, 15, 25);
 
-        ship.LoadContainer(appleContainer);
-        ship.LoadContainer(oilContainer);
-        ship.LoadContainer(orangeContainer);
+        RefrigeratedContainer bananaContainer = new RefrigeratedContainer(1000, 500, 250, 600, "Banany", 5);
+        GasContainer heliumContainer = new GasContainer(2000, 700, 300, 700, 10);
+        LiquidContainer milkContainer = new LiquidContainer(1500, 600, 280, 650, false);
 
-        Console.WriteLine(ship);
-        foreach (var c in ship.Containers)
+        bananaContainer.Load(900);
+        heliumContainer.Load(1900);
+        milkContainer.Load(1200);
+
+        ship1.LoadContainer(bananaContainer);
+        ship1.LoadContainer(heliumContainer);
+        ship1.LoadContainer(milkContainer);
+
+        Console.WriteLine(ship1);
+        foreach (var c in ship1.Containers)
         {
             Console.WriteLine(c);
         }
+
+        Console.WriteLine("\nRozładowanie kontenera.");
+        bananaContainer.Unload();
+        Console.WriteLine(bananaContainer);
+
+        Console.WriteLine("\nPrzeniesienie kontenera na inny statek.");
+        ship1.UnloadContainer(milkContainer);
+        ship2.LoadContainer(milkContainer);
+        Console.WriteLine(ship2);
+
+        Console.WriteLine("\nZastąpienie kontenera.");
+        ship1.UnloadContainer(heliumContainer);
+        ship1.LoadContainer(new GasContainer(2500, 800, 320, 750, 15));
+        Console.WriteLine(ship1);
     }
 }
